@@ -1,0 +1,78 @@
+/* Resp image  https://css-tricks.com/perfect-full-page-background-image/  */
+
+body{
+	 background-image: url("1.jpg");
+	 background-repeat: no-repeat;
+	 background-size: cover;
+}
+
+h1{
+	background: #77bbe8;
+	color: white;
+	font-weight: normal; 
+	font-size: 24px;
+	font-family: sans-serif;
+	margin:0;
+	padding: 10px 20px;
+}
+
+#container{
+	border: 1px solid black;
+	width: 300px;
+	margin: 100px auto;
+	/*box-shadow: 0 0 3px rdba(0,0,0,0.1);*/
+}
+
+ul{
+	list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+/*background: #fff;*/
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+}
+
+
+input{
+    
+	font-size: 18px;
+	width:100%;
+	color: #666;
+	margin:0;
+	padding: 13px 13px 13px 13px;
+	box-sizing: border-box;
+}
+
+input:focus{
+	border: 1px solid #77bbe8;
+	outline: none;
+}
+.completed{
+	color: grey;
+	text-decoration: line-through;
+}
+
+.fa-plus{
+	float: right;
+}
+
+span{
+	/*background: red;*/
+	/*padding:7px;*/
+
+	text-align: center;
+	margin-right: 15px;
+	width: 0;
+	display: inline-block;
+	transition: 0.2s linear;
+	opacity: 0;
+}
+
+li:hover span{
+	width: 30px;
+	opacity: 1;
+}
