@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background-image: url('background_1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100%; 
+      padding: 0;
+    margin: 0;
+    }
+
+    h1 {
+      font-size: 80px;
+      text-align: center;
+      color: purple;
+      text-shadow: 2px 2px black;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    h2 {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+    .activity-number {
+      color: magenta;
+    }
+
+    .activity-name {
+      color: blue;
+    }
+
+    a {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+
+    .outer {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .middle {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+      width: 500;
+    }
+  </style>
+
+  <body>
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <h1>Animals</h1>
+          <h2 class="activity-number">Activity 3</h2>
+          <h2 class="activity-name">Drag and Drop</h2>
+        </div>
+      </div>
+    </div>
+
+    <a href="game.html"><img src="Start BTN.png" alt="startButton" id="startButton"/></a>
+    <audio id="audio1">
+      <source src="01.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audio2">
+      <source src="02.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audio3">
+      <source src="03.mp3" type="audio/mpeg" />
+    </audio>
+    <script>
+      window.onload = function() {
+        var audio1 = document.getElementById('audio1');
+        var audio2 = document.getElementById('audio2');
+        var audio3 = document.getElementById('audio3');
+
+        function playAudio(audio) {
+          const playPromise = audio.play();
+          if (playPromise !== null){
+              playPromise.catch(() => { playAudio(audio); })
+          }
+        }
+        playAudio(audio1);
+        audio1.onended = function() {
+          playAudio(audio2);
+        };
+        audio2.onended = function() {
+          playAudio(audio3);
+        };
+      };
+    </script>
+  </body>
+</html>
